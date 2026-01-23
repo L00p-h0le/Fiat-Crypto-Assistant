@@ -8,8 +8,8 @@ interface TokenSelectorProps {
 
 const TokenSelector: React.FC<TokenSelectorProps> = ({ selectedToken, onSelect, disabled }) => {
     return (
-        <div className="w-full mb-6">
-            <label className="block text-gray-400 text-sm font-bold mb-2">
+        <div className="w-full">
+            <label className="text-white/50 text-xs font-bold tracking-[0.2em] uppercase block mb-4">
                 Select Token
             </label>
             <div className="grid grid-cols-2 gap-4">
@@ -17,27 +17,27 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ selectedToken, onSelect, 
                     onClick={() => onSelect('ETH')}
                     disabled={disabled}
                     className={`
-                        py-3 px-4 rounded-lg font-bold border-2 transition-all flex items-center justify-center space-x-2
+                        h-14 px-8 font-bold text-xs uppercase tracking-[0.2em] transition-all
                         ${selectedToken === 'ETH'
-                            ? 'bg-blue-600/20 border-blue-500 text-blue-400'
-                            : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'}
+                            ? 'bg-white text-black'
+                            : 'border border-white/20 text-white hover:bg-white hover:text-black'}
                         ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
                     `}
                 >
-                    <span>ETH</span>
+                    ETH
                 </button>
                 <button
                     onClick={() => onSelect('USDC')}
                     disabled={disabled}
                     className={`
-                        py-3 px-4 rounded-lg font-bold border-2 transition-all flex items-center justify-center space-x-2
+                        h-14 px-8 font-bold text-xs uppercase tracking-[0.2em] transition-all
                         ${selectedToken === 'USDC'
-                            ? 'bg-blue-600/20 border-blue-500 text-blue-400'
-                            : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-gray-600'}
+                            ? 'bg-white text-black'
+                            : 'border border-white/20 text-white hover:bg-white hover:text-black'}
                         ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
                     `}
                 >
-                    <span>USDC</span>
+                    USDC
                 </button>
             </div>
         </div>
