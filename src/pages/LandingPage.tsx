@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface LandingPageProps {
     onConnectWallet: () => Promise<void>;
@@ -23,10 +23,9 @@ export default function LandingPage({ onConnectWallet, account, isConnecting, ch
             {/* Navbar */}
             <nav className="w-full px-12 py-8 flex items-center justify-between bg-premium-black/50 backdrop-blur-md">
                 <div className="flex items-center gap-6">
-                    <div className="size-10 flex items-center justify-center border border-white/20 rotate-45">
-                        <div className="size-6 accent-bar -rotate-45"></div>
-                    </div>
-                    <h2 className="font-serif text-2xl tracking-[0.2em] uppercase">CryptoPay</h2>
+                    <Link to="/">
+                        <h2 className="font-serif text-2xl tracking-[0.2em] uppercase cursor-pointer hover:opacity-80 transition-opacity">CryptoPay</h2>
+                    </Link>
                 </div>
 
                 <button

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface NavbarProps {
     variant: 'landing' | 'authenticated';
     onConnectWallet?: () => void;
@@ -9,14 +11,9 @@ export default function Navbar({ variant, onConnectWallet, account, onDisconnect
     if (variant === 'landing') {
         return (
             <nav className="w-full px-8 py-6 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <span className="text-xl font-bold tracking-wide text-white">CRYPTOPAY</span>
-                </div>
+                <Link to="/" className="flex items-center space-x-2">
+                    <span className="font-serif text-2xl tracking-[0.2em] uppercase text-white hover:opacity-80 transition-opacity">CryptoPay</span>
+                </Link>
 
                 <button
                     onClick={onConnectWallet}
@@ -31,9 +28,9 @@ export default function Navbar({ variant, onConnectWallet, account, onDisconnect
     return (
         <header className="flex items-center justify-between px-12 py-8 bg-premium-black/50 backdrop-blur-md sticky top-0 z-50">
             <div className="flex items-center gap-6">
-                <div className="size-10 flex items-center justify-center border border-white/20 rotate-45">
-                    <div className="size-6 accent-bar -rotate-45"></div>
-                </div>
+                <Link to="/" className="flex items-center gap-2">
+                    <span className="font-serif text-2xl tracking-[0.2em] uppercase text-white hover:opacity-80 transition-opacity">CryptoPay</span>
+                </Link>
             </div>
 
 
